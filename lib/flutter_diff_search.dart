@@ -3,6 +3,7 @@
 /// More dartdocs go here.
 library flutter_diff_search;
 
-export 'src/flutter_diff_search_base.dart';
+export 'src/diff_cleanup_type.dart';
+export 'src/pretty_diff_text.dart';
 
 // TODO: Export any libraries intended for clients of this package.
