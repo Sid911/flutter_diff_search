@@ -2,7 +2,7 @@ import 'package:diff_match_patch/diff_match_patch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_diff_search/src/diff_cleanup_type.dart';
 
-class PrettyDiffText extends StatelessWidget {
+class DiffText extends StatelessWidget {
   /// The original text which is going to be compared with [newText].
   final String oldText;
 
@@ -49,7 +49,7 @@ class PrettyDiffText extends StatelessWidget {
   final TextWidthBasis textWidthBasis;
   final TextHeightBehavior? textHeightBehavior;
 
-  const PrettyDiffText({
+  const DiffText({
     Key? key,
     required this.oldText,
     required this.newText,
@@ -82,10 +82,10 @@ class PrettyDiffText extends StatelessWidget {
 
     final textSpans = List<TextSpan>.empty(growable: true);
 
-    diffs.forEach((diff) {
+    for (var diff in diffs) {
       TextStyle? textStyle = getTextStyleByDiffOperation(diff);
       textSpans.add(TextSpan(text: diff.text, style: textStyle));
-    });
+    }
 
     return RichText(
       text: TextSpan(
