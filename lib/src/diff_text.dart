@@ -87,8 +87,8 @@ class DiffText extends StatelessWidget {
       textSpans.add(TextSpan(text: diff.text, style: textStyle));
     }
 
-    return RichText(
-      text: TextSpan(
+    return SelectableText.rich(
+      TextSpan(
         text: '',
         style: defaultTextStyle,
         children: textSpans,
